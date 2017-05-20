@@ -3,8 +3,7 @@
 
 from std_msgs.msg import String
 from std_msgs.msg import Int32
-from roboy_move.srv import Movement
-from roboy_move.srv import Yaw
+from roboy_communication_control.srv import PerformMovement, MoveYaw
 
 import os
 import sys
@@ -28,8 +27,8 @@ def replay_callback(req):
 
 if __name__ == '__main__':
 	rospy.init_node('roboy_move')
-	rospy.Service('/roboy_move/yaw', Yaw, yaw_callback)
-	rospy.Service('/roboy_move/replay', Movement, replay_callback)
+	rospy.Service('/roboy_move/yaw', MoveYaw, yaw_callback)
+	rospy.Service('/roboy_move/replay', PerformMovement, replay_callback)
 	print "/roboy_move/ is ready"
 
 	rospy.spin()

@@ -7,32 +7,12 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
-  message_generation
-  
+  roboy_communication_control
 )
 
-#  services in the 'srv' folder
-add_service_files(
-  FILES
-  Movement.srv
-  Yaw.srv
-
-)
-
-# ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   EmotionMsg.msg
-# )
-
-## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
 
 catkin_package(
-  CATKIN_DEPENDS rospy std_msgs message_generation 
+  CATKIN_DEPENDS rospy std_msgs  roboy_communication_control
 )
 
 
