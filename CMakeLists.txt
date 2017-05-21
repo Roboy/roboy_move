@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 
 catkin_package(
-  CATKIN_DEPENDS rospy std_msgs  roboy_communication_control
+  CATKIN_DEPENDS rospy std_msgs roboy_communication_control
 )
 
 
@@ -22,11 +22,11 @@ catkin_package(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
  install(PROGRAMS
-   srs/move.py
+   scripts/move.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
- install(DIRECTORY launch config
+ install(DIRECTORY launch 
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
